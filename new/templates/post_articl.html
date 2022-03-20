@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block logo %}
+    <body>
+        <div class="container">
+                <img src="https://media1.giphy.com/media/coxQHKASG60HrHtvkt/200.gif" width="400" height="200">
+                <br>
+        </div>
+    </body>
+{% endblock %}
+
+{% block content %}
+    <h1 class="container">{{ post.title }} </h1>
+    <div class="container">
+        <div class="alert alert-info">
+            <p>{{ post.text }}</p>
+            <a href="/post/{{ post.id }}/del" class="btn btn-danger">Удалить</a>
+            <a href="/post/{{ post.id }}/update" class="btn btn-success">Обновить</a>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block logo %}
+    <body>
+        <div class="container">
+                <img src="https://media1.giphy.com/media/coxQHKASG60HrHtvkt/200.gif" width="400" height="200">
+                <br>
+        </div>
+    </body>
+{% endblock %}
+{% block content %}
+    <h1 class="text-center">Все статьи на сайте </h1>
+    {% if article|length > 0 %}
+        {% for post in article %}
+            <div class="container">
+                <div class="alert alert-info">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.intro }}</p>
+                    <p><b>Дата: {{ post.date.date() }}</b></p>
+                    <a href="/post/{{ post.id }}" class="btn btn-warning">Детальное</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Пока нет статьи </h3>
+    {% endif %}
+{% endblock %}
+
